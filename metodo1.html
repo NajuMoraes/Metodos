@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtragem de números pares</title>
+</head>
+<style>
+    body{
+        background-color: rgb(220, 183, 183);
+    }
+    p{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    </style>
+<body>
+    <h1>Filtragem de Números Pares</h1>
+    <label for="numeros">Insira números separados por vírgula:</label>
+    <input type="text" id="numeros">
+    <button onclick="filtrarNumerosPares()">Filtrar Pares</button>
+    <p>Números Pares: <span id="resultado"></span></p>
+    <p>Esta aplicação permite ao usuário inserir uma lista de números e, em seguida, filtra apenas os números pares usando o método filter de arrays.</p>
+
+    <script>
+        function filtrarNumerosPares() {
+            const numerosInput = document.getElementById('numeros').value;
+            const numeros = numerosInput.split(',').map(Number);
+            const numerosPares = numeros.filter(numero => numero % 2 === 0);
+            document.getElementById('resultado').textContent = numerosPares.join(', ');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remoção de Duplicatas</title>
+</head>
+<style>
+    body{
+        background-color: rgb(220, 183, 183);
+    }
+    p{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    </style>
+<body>
+    <h1>Remoção de Duplicatas</h1>
+    <label for="elementos">Insira elementos separados por vírgula:</label>
+    <input type="text" id="elementos">
+    <button onclick="removerDuplicatas()">Remover Duplicatas</button>
+    <p>Elementos Únicos: <span id="resultado"></span></p>
+    <p>Nesta aplicação, o usuário pode inserir uma lista de elementos e o sistema remove automaticamente as duplicatas usando o método filter de arrays.</p>
+
+    <script>
+        function removerDuplicatas() {
+            const elementosInput = document.getElementById('elementos').value;
+            const elementos = elementosInput.split(',');
+            const elementosUnicos = elementos.filter((elemento, index, array) => array.indexOf(elemento) === index);
+            document.getElementById('resultado').textContent = elementosUnicos.join(', ');
+        }
+    </script>
+</body>
+</html>

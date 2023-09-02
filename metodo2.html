@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Números</title>
+</head>
+<style>
+    body{
+        background-color: rgb(220, 183, 183);
+    }
+    p{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    </style>
+<body>
+    <h1>Soma de Números</h1>
+    <label for="numeros">Insira números separados por vírgula:</label>
+    <input type="text" id="numeros">
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    <p>Soma: <span id="resultado"></span></p>
+    <p>Esta aplicação permite ao usuário inserir uma lista de números e calcular a soma deles usando o método reduce de arrays.</p>
+
+    <script>
+        function calcularSoma() {
+            const numerosInput = document.getElementById('numeros').value;
+            const numeros = numerosInput.split(',').map(Number);
+            const soma = numeros.reduce((acc, current) => acc + current, 0);
+            document.getElementById('resultado').textContent = soma;
+        }
+    </script>
+</body>
+</html>

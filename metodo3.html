@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+</head>
+    <style>
+    body{
+        background-color: rgb(220, 183, 183);
+    }
+    p{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    </style>
+<body>
+    <h1>Calculadora de Média</h1>
+    <label for="notas">Insira notas separadas por vírgula:</label>
+    <input type="text" id="notas">
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p>Média das Notas: <span id="resultado"></span></p>
+    <p>Nesta aplicação, o usuário pode inserir uma lista de notas e calcular a média delas usando o método reduce para somar as notas e, em seguida, dividir pelo número de notas.</p>
+
+    <script>
+        function calcularMedia() {
+            const notasInput = document.getElementById('notas').value;
+            const notas = notasInput.split(',').map(Number);
+            const soma = notas.reduce((acc, current) => acc + current, 0);
+            const media = soma / notas.length;
+            document.getElementById('resultado').textContent = media.toFixed(2);
+        }
+    </script>
+</body>
+</html>
